@@ -4,28 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>plain & simple</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #F8F8F8; /* off-white background */
-            font-family: 'Times New Roman', serif; /* academic typographic font */
+            background-color: #3E2723; /* Dark brown background */
+            font-family: 'Cormorant', serif; /* Elegant serif font */
             margin: 0;
-            height: 100vh;
+            padding: 2rem;
+            height: calc(100vh - 4rem);
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
+            overflow-y: auto; /* Enables scrolling for longer content */
         }
         .typewriter h1 {
-            color: black;
-            font-size: 32px; /* Large font size */
-            border-right: 2px solid black; /* Initially showing the cursor */
-            white-space: nowrap; /* Ensures the text stays in one line */
-            margin: 0 auto; /* Centering the heading */
+            color: #03A9F4; /* Vibrant blue */
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5em;
+            padding: 0.5em 1em;
+            white-space: nowrap;
+            border: 2px solid #03A9F4; /* Blue outline */
+            box-shadow: 0 0 10px #03A9F4; /* Subtle glow for emphasis */
+        }
+        .lyrics {
+            color: #FFF8E1; /* Light cream color for readability */
+            font-size: 1.2rem;
+            line-height: 1.6;
+            width: 90%;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .audio-player {
+            margin-top: 1em;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <div class="typewriter">
         <h1></h1>
+    </div>
+    <div class="audio-player">
+        <audio id="audioPlayer" controls>
+            <source src="https://benlebron.github.io/BBL%20DRIZZY%20BPM%20150.mp3.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        <button onclick="document.getElementById('audioPlayer').play()">Play Music</button>
+    </div>
+    <div class="lyrics">
+        <!-- Include your lyrics here -->
     </div>
     <script>
         const text = "BBL Drizzy";
@@ -36,9 +68,7 @@
             if (index < text.length) {
                 h1.textContent += text[index];
                 index++;
-                setTimeout(typeText, 50); // Faster typing effect
-            } else {
-                h1.style.borderRight = 'none'; // Remove the cursor after typing
+                setTimeout(typeText, 75);
             }
         }
 
@@ -46,3 +76,4 @@
     </script>
 </body>
 </html>
+
