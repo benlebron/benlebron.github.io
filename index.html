@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #3E2723; /* Dark brown background */
+            background-color: #FBE9D0; /* Off-white background */
             font-family: 'Cormorant', serif; /* Elegant serif font */
             margin: 0;
             padding: 2rem;
@@ -15,20 +15,18 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            overflow-y: auto; /* Enables scrolling for longer content */
+            overflow-y: auto;
         }
         .typewriter h1 {
-            color: #03A9F4; /* Vibrant blue */
-            font-size: 3rem;
+            color: #3E2723; /* Dark brown text */
+            font-size: 3.5rem; /* Slightly larger size */
             font-weight: 700;
-            margin-bottom: 0.5em;
+            margin: 0 auto 2rem auto; /* Increased margin for more space */
             padding: 0.5em 1em;
             white-space: nowrap;
-            border: 2px solid #03A9F4; /* Blue outline */
-            box-shadow: 0 0 10px #03A9F4; /* Subtle glow for emphasis */
         }
         .lyrics {
-            color: #FFF8E1; /* Light cream color for readability */
+            color: #3E2723; /* Dark brown text for readability */
             font-size: 1.2rem;
             line-height: 1.6;
             width: 90%;
@@ -37,15 +35,31 @@
         }
         .audio-player {
             margin-top: 1em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
-        button {
-            padding: 10px 20px;
+        .speed-control {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            justify-content: center;
+        }
+        .watermark {
+            position: fixed;
+            right: 10px;
+            top: 10px;
+            font-weight: bold;
+            color: #3E2723;
+            opacity: 0.5;
             font-size: 1rem;
-            cursor: pointer;
         }
     </style>
 </head>
 <body>
+    <div class="watermark">Metro Boomin</div>
     <div class="typewriter">
         <h1></h1>
     </div>
@@ -54,10 +68,82 @@
             <source src="https://benlebron.github.io/BBL%20DRIZZY%20BPM%20150.mp3.mp3" type="audio/mpeg">
             Your browser does not support the audio element.
         </audio>
-        <button onclick="document.getElementById('audioPlayer').play()">Play Music</button>
+        <div class="speed-control">
+            <label for="speedSlider">Speed:</label>
+            <input id="speedSlider" type="range" min="0.5" max="1.5" step="0.05" value="1" onchange="updatePlaybackSpeed(this.value)">
+        </div>
     </div>
     <div class="lyrics">
-        <!-- Include your lyrics here -->
+        [Chorus]<br>
+        BBL Drizzy<br>
+        BBL Drizzy, ooh, ooh<br>
+        BBL Drizzy, oh<br>
+        BBL Drizzy, ooh, ooh-ooh<br>
+        BBL Drizzy<br>
+        BBL Drizzy, ooh, ooh-ooh<br>
+        BBL Drizzy, oh<br>
+        BBL Drizzy<br>
+        <br>
+        [Refrain]<br>
+        I'm thicker than a Snicker<br>
+        I'm thicker than your ninja<br>
+        Don't act like you don't know me<br>
+        These yams deserve a trophy<br>
+        Baby, it ain't no mystery<br>
+        Got the best BBL in history<br>
+        This cake will make you show up<br>
+        I know you seen this glow up<br>
+        As BBL Drizzy<br>
+        BBL Drizzy<br>
+        <br>
+        [Verse 1]<br>
+        Ooh, ooh<br>
+        Oh<br>
+        Ooh, ooh-ooh<br>
+        Oh<br>
+        Don't act like you don't know me<br>
+        This cake will make you show up<br>
+        I know you seen this glow up<br>
+        As BBL Drizzy<br>
+        BBL Drizzy<br>
+        <br>
+        [Chorus]<br>
+        BBL Drizzy<br>
+        BBL Drizzy, ooh, ooh<br>
+        BBL Drizzy, oh<br>
+        BBL Drizzy, ooh, ooh-ooh<br>
+        BBL Drizzy<br>
+        BBL Drizzy, ooh, ooh-ooh<br>
+        BBL Drizzy, oh<br>
+        BBL Drizzy<br>
+        <br>
+        [Refrain]<br>
+        I'm thicker than a Snicker<br>
+        I'm thicker than your ninja<br>
+        Don't act like you don't know me<br>
+        These yams deserve a trophy<br>
+        Baby, it ain't no mystery<br>
+        Got the best BBL in history<br>
+        This cake will make you show up<br>
+        I know you seen this glow up<br>
+        As BBL Drizzy<br>
+        BBL Drizzy<br>
+        <br>
+        [Verse 2]<br>
+        BBL<br>
+        Ooh, ooh<br>
+        Oh<br>
+        Ooh, ooh-ooh<br>
+        Oh<br>
+        Don't act like you don't know me<br>
+        I know you seen this glow up<br>
+        As BBL Drizzy<br>
+        BBL Drizzy<br>
+        <br>
+        [Outro]<br>
+        BBL<br>
+        Ooh, ooh<br>
+        Oh<br>
     </div>
     <script>
         const text = "BBL Drizzy";
@@ -68,12 +154,16 @@
             if (index < text.length) {
                 h1.textContent += text[index];
                 index++;
-                setTimeout(typeText, 75);
+                setTimeout(typeText, 75); // Elegantly moderate speed
             }
         }
 
         typeText(); // Start the typing effect
+
+        function updatePlaybackSpeed(value) {
+            const audioPlayer = document.getElementById('audioPlayer');
+            audioPlayer.playbackRate = parseFloat(value);
+        }
     </script>
 </body>
 </html>
-
