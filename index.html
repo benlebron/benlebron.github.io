@@ -47,16 +47,6 @@
             align-items: center;
             width: 100%;
         }
-        .download-button {
-            padding: 10px 20px;
-            font-size: 1rem;
-            background-color: #3E2723; /* Dark brown */
-            color: #FBE9D0; /* Off-white text */
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 10px;
-        }
         label {
             color: #3E2723;
             font-size: 1rem;
@@ -65,7 +55,7 @@
         input[type="range"] {
             width: 200px;
             cursor: pointer;
-            -webkit-appearance: none; /* Improves appearance on webkit browsers */
+            -webkit-appearance: none;
             appearance: none;
             background-color: #3E2723; /* Dark brown slider track */
         }
@@ -85,9 +75,18 @@
             cursor: pointer;
             border-radius: 50%;
         }
+        .watermark {
+            position: fixed;
+            right: 10px;
+            top: 10px;
+            color: #3E2723; /* Dark brown text for visibility */
+            font-size: 1rem;
+            opacity: 0.5; /* Slightly transparent for a watermark effect */
+        }
     </style>
 </head>
 <body>
+    <span class="watermark">Metro Boomin</span> <!-- Watermark in the top right corner -->
     <div class="typewriter">
         <h1>BBL Drizzy</h1>
     </div>
@@ -99,7 +98,6 @@
         <div class="control-panel">
             <label for="speedSlider">Speed:</label>
             <input id="speedSlider" type="range" min="0.5" max="1.5" step="0.05" value="1" onchange="updatePlaybackSpeed(this.value)">
-            <button class="download-button" onclick="window.location.href='https://benlebron.github.io/BBL%20DRIZZY%20BPM%20150.mp3.mp3';" download>Download Audio</button>
         </div>
     </div>
     <div class="lyrics">
@@ -136,28 +134,6 @@
         As BBL Drizzy<br>
         BBL Drizzy<br>
         <br>
-        [Chorus]<br>
-        BBL Drizzy<br>
-        BBL Drizzy, ooh, ooh<br>
-        BBL Drizzy, oh<br>
-        BBL Drizzy, ooh, ooh-ooh<br>
-        BBL Drizzy<br>
-        BBL Drizzy, ooh, ooh-ooh<br>
-        BBL Drizzy, oh<br>
-        BBL Drizzy<br>
-        <br>
-        [Refrain]<br>
-        I'm thicker than a Snicker<br>
-        I'm thicker than your ninja<br>
-        Don't act like you don't know me<br>
-        These yams deserve a trophy<br>
-        Baby, it ain't no mystery<br>
-        Got the best BBL in history<br>
-        This cake will make you show up<br>
-        I know you seen this glow up<br>
-        As BBL Drizzy<br>
-        BBL Drizzy<br>
-        <br>
         [Verse 2]<br>
         BBL<br>
         Ooh, ooh<br>
@@ -165,6 +141,16 @@
         Ooh, ooh-ooh<br>
         Oh<br>
         Don't act like you don't know me<br>
+        I know you seen this glow up<br>
+        As BBL Drizzy<br>
+        BBL Drizzy<br>
+        <br>
+        [Refrain]<br>
+        Don't act like you don't know me<br>
+        These yams deserve a trophy<br>
+        Baby, it ain't no mystery<br>
+        Got the best BBL in history<br>
+        This cake will make you show up<br>
         I know you seen this glow up<br>
         As BBL Drizzy<br>
         BBL Drizzy<br>
@@ -182,3 +168,4 @@
     </script>
 </body>
 </html>
+
