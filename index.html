@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Typing Effect Without Cursor Blink at the End</title>
+    <style>
+        body {
+            background-color: #F8F8F8; /* off-white background */
+            font-family: 'Times New Roman', serif; /* academic typographic font */
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .typewriter h1 {
+            color: black;
+            font-size: 32px; /* Large font size */
+            border-right: 2px solid black; /* Initially showing the cursor */
+            white-space: nowrap; /* Ensures the text stays in one line */
+            margin: 0 auto; /* Centering the heading */
+        }
+    </style>
+</head>
+<body>
+    <div class="typewriter">
+        <h1></h1>
+    </div>
+    <script>
+        const text = "BBL Drizzy";
+        const h1 = document.querySelector('.typewriter h1');
+        let index = 0;
+
+        function typeText() {
+            if (index < text.length) {
+                h1.textContent += text[index];
+                index++;
+                setTimeout(typeText, 50); // Faster typing effect
+            } else {
+                h1.style.borderRight = 'none'; // Remove the cursor after typing
+            }
+        }
+
+        typeText(); // Start the typing effect
+    </script>
+</body>
+</html>
