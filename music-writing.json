@@ -1,0 +1,12 @@
+[
+    {
+        "title": "Title of the Latest Music & Writing Piece",
+        "image": "path/to/image1.jpg",
+        "description": "This is a full description or content of the latest music and writing piece."
+    },
+    {
+        "title": "Another Title",
+        "image": "path/to/image2.jpg",
+        "description": "Full description or content of another piece."
+    }
+]
