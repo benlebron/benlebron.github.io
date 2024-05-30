@@ -1,12 +1,7 @@
 [
     {
-        "title": "Innovative Idea 1",
-        "image": "path/to/image1.jpg",
-        "description": "This is a description of an innovative idea."
+        "title": "Excerpt",
+        "image": "",
+        "description": "The things we didn’t do are frequently more painful because, as Pink says, ‘inactions, by laying eggs under our skin, incubate endless speculation’. So you’re better off setting up that business, or asking that girl out, or stepping off the train, because of the inherently limited nature of contemplating action versus inaction. "
     },
-    {
-        "title": "Innovative Idea 2",
-        "image": "path/to/image2.jpg",
-        "description": "This is another description of an innovative idea."
-    }
 ]
