@@ -1,12 +1,8 @@
 [
     {
-        "title": "Title of the Latest Music & Writing Piece",
-        "image": "path/to/image1.jpg",
-        "description": "This is a full description or content of the latest music and writing piece."
-    },
-    {
-        "title": "Another Title",
-        "image": "path/to/image2.jpg",
-        "description": "Full description or content of another piece."
+        "title": "BBL Drizzy Project",
+        "excerpt": "Listen to the latest track by BBL Drizzy!",
+        "description": "This project features the latest track by BBL Drizzy. You can listen to the track using the audio player below.",
+        "audio": "https://benlebron.github.io/BBL%20DRIZZY%20BPM%20150.mp3.mp3"
     }
 ]
