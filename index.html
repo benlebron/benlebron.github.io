@@ -27,6 +27,8 @@
             font-size: 1.5rem;
             color: #1E3A8A; /* Blue text */
             opacity: 0.6; /* Slightly transparent */
+            cursor: pointer;
+            text-decoration: none; /* Remove underline */
         }
         .navigation {
             margin-top: 2rem;
@@ -106,7 +108,7 @@
     </style>
 </head>
 <body class="scroll-animation">
-    <div class="watermark">LeBlanc</div>
+    <a href="index.html" class="watermark">LeBlanc</a>
     <div class="navigation">
         <div class="nav-item" onclick="window.location.href='music-writing.html'">Music & Writing</div>
         <div class="nav-item" onclick="window.location.href='ideas-running.html'">Ideas Running</div>
@@ -146,8 +148,7 @@
                 const container = document.getElementById(containerId);
                 container.innerHTML = `
                     <h3>${latest.title}</h3>
-                    <img src="${latest.image}" alt="${latest.title}">
-                    <p>${latest.excerpt}</p>
+                    ${latest.audio ? `<audio controls><source src="${latest.audio}" type="audio/mpeg">Your browser does not support the audio element.</audio>` : ''}
                 `;
             } catch (error) {
                 console.error('Error fetching recent publication:', error);
