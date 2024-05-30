@@ -1,12 +1,7 @@
 [
     {
         "title": "Artwork 1",
-        "image": "path/to/image1.jpg",
-        "description": "Description of the first artwork."
-    },
-    {
-        "title": "Artwork 2",
-        "image": "path/to/image2.jpg",
-        "description": "Description of the second artwork."
+        "image": "croc(1).jpg",
+        "description": "Peter Beard"
     }
 ]
