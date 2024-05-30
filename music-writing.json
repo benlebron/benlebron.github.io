@@ -1,6 +1,9 @@
 [
     {
-        "title": "BBL Drizzy",
+        "title": "BBL Drizzy Project",
+        "image": "",  // If there's no image, you can leave this as an empty string
+        "excerpt": "",
+        "description": "",
         "audio": "https://benlebron.github.io/BBL%20DRIZZY%20BPM%20150.mp3.mp3"
     }
 ]
