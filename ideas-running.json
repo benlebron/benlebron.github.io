@@ -1,0 +1,12 @@
+[
+    {
+        "title": "Innovative Idea 1",
+        "image": "path/to/image1.jpg",
+        "description": "This is a description of an innovative idea."
+    },
+    {
+        "title": "Innovative Idea 2",
+        "image": "path/to/image2.jpg",
+        "description": "This is another description of an innovative idea."
+    }
+]
