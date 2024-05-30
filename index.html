@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Plain & Simple</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #FBE9D0; /* Off-white background */
+            font-family: 'Cormorant', serif; /* Elegant serif font */
+            margin: 0;
+            padding: 2rem;
+            height: calc(100vh - 4rem);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow-y: auto;
+        }
+        h1 {
+            color: #3E2723; /* Dark brown text */
+            font-size: 3.5rem; /* Slightly larger size */
+            font-weight: 700;
+            margin-bottom: 2rem; /* Increased margin for more space */
+        }
+        .link-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .project-link {
+            color: #3E2723; /* Dark brown text */
+            font-size: 1.5rem;
+            text-decoration: none;
+            border: 2px solid #3E2723;
+            padding: 1rem 2rem;
+            margin-top: 1rem;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .project-link:hover {
+            background-color: #3E2723; /* Dark brown background on hover */
+            color: #FBE9D0; /* Off-white text on hover */
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Plain & Simple</h1>
+    <div class="link-container">
+        <a href="project.html" class="project-link">Go to BBL Drizzy Project</a>
+    </div>
+</body>
+</html>
