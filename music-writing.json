@@ -1,8 +1,6 @@
 [
     {
-        "title": "BBL Drizzy Project",
-        "excerpt": "Listen to the latest track by BBL Drizzy!",
-        "description": "This project features the latest track by BBL Drizzy. You can listen to the track using the audio player below.",
+        "title": "BBL Drizzy",
         "audio": "https://benlebron.github.io/BBL%20DRIZZY%20BPM%20150.mp3.mp3"
     }
 ]
