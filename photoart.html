@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photoart - Creative Showcase</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #FAF9F6; /* Off-white background */
+            font-family: 'Cormorant', serif; /* Elegant serif font */
+            margin: 0;
+            padding: 0;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .watermark {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            font-family: 'Great Vibes', cursive; /* Classy cursive font */
+            font-size: 1.5rem;
+            color: #1E3A8A; /* Blue text */
+            opacity: 0.6; /* Slightly transparent */
+            cursor: pointer;
+            text-decoration: none; /* Remove underline */
+        }
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        .hero h1 {
+            font-size: 3.5rem; /* Larger title text */
+            color: #1E3A8A; /* Blue text */
+            margin: 0;
+        }
+        .section {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        .section h2 {
+            font-size: 2.5rem;
+            color: #1E3A8A; /* Blue text */
+            margin-bottom: 1rem;
+        }
+        .section p {
+            font-size: 1.2rem;
+            color: #333; /* Darker text for readability */
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .content-item img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 1rem;
+        }
+        .content-item {
+            margin-bottom: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="watermark">LeBlanc</a>
+    <div class="hero">
+        <h1>Photoart</h1>
+    </div>
+    <div class="section" id="content">
+        <!-- Content will be dynamically loaded here -->
+    </div>
+    <script>
+        async function loadContent() {
+            try {
+                const response = await fetch('photoart.json');
+                const data = await response.json();
+                const contentContainer = document.getElementById('content');
+                contentContainer.innerHTML = data.map(item => `
+                    <div class="content-item">
+                        <h2>${item.title}</h2>
+                        <img src="${item.image}" alt="${item.title}">
+                        <p>${item.description}</p>
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Error loading content:', error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadContent);
+    </script>
+</body>
+</html>
