@@ -3,51 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Plain & Simple</title>
+    <title>Home - Creative Showcase</title>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
         body {
-            background-color: #FBE9D0; /* Off-white background */
+            background-color: #FAF9F6; /* Off-white background */
             font-family: 'Cormorant', serif; /* Elegant serif font */
             margin: 0;
-            padding: 2rem;
-            height: calc(100vh - 4rem);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            padding: 0;
             overflow-y: auto;
-        }
-        h1 {
-            color: #3E2723; /* Dark brown text */
-            font-size: 3.5rem; /* Slightly larger size */
-            font-weight: 700;
-            margin-bottom: 2rem; /* Increased margin for more space */
-        }
-        .link-container {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        .project-link {
-            color: #3E2723; /* Dark brown text */
+        .watermark {
+            position: fixed;
+            top: 10px;
+            left: 10px;
+            font-family: 'Great Vibes', cursive; /* Classy cursive font */
             font-size: 1.5rem;
-            text-decoration: none;
-            border: 2px solid #3E2723;
-            padding: 1rem 2rem;
-            margin-top: 1rem;
-            transition: background-color 0.3s, color 0.3s;
+            color: #1E3A8A; /* Blue text */
+            opacity: 0.6; /* Slightly transparent */
         }
-        .project-link:hover {
-            background-color: #3E2723; /* Dark brown background on hover */
-            color: #FBE9D0; /* Off-white text on hover */
+        .navigation {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            max-width: 800px;
+        }
+        .nav-item {
+            color: #1E3A8A; /* Blue text */
+            font-family: 'Montserrat', sans-serif; /* Modern sans-serif font */
+            font-size: 1rem; /* Smaller text for categories */
+            font-weight: 700;
+            margin: 0 1rem;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .nav-item:hover {
+            color: #333;
+        }
+        .hero {
+            text-align: center;
+            padding: 6rem 2rem;
+        }
+        .hero h1 {
+            font-size: 5rem; /* Larger title text */
+            color: #1E3A8A; /* Blue text */
+            margin: 0;
+        }
+        .hero p {
+            font-size: 1.5rem;
+            color: #333;
+            font-style: italic;
+            margin-top: 1rem;
+        }
+        .hero img {
+            margin-top: 2rem;
+            max-width: 100%;
+            height: auto;
+        }
+        .recent-publication {
+            margin: 4rem 2rem;
+            text-align: center;
+        }
+        .recent-publication h2 {
+            font-size: 2.5rem;
+            color: #1E3A8A; /* Blue text */
+            margin-bottom: 1rem;
+        }
+        .recent-publication h3 {
+            font-size: 2rem;
+            color: #1E3A8A; /* Blue text */
+            margin-bottom: 0.5rem;
+        }
+        .recent-publication p, .recent-publication img {
+            font-size: 1.2rem;
+            color: #333; /* Darker text for readability */
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .section {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        .section h2 {
+            font-size: 2.5rem;
+            color: #1E3A8A; /* Blue text */
+            margin-bottom: 1rem;
+        }
+        .section p {
+            font-size: 1.2rem;
+            color: #333; /* Darker text for readability */
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .scroll-animation {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
-<body>
-    <h1>Welcome to Plain & Simple</h1>
-    <div class="link-container">
-        <a href="project.html" class="project-link">Go to BBL Drizzy Project</a>
+<body class="scroll-animation">
+    <div class="watermark">LeBlanc</div>
+    <div class="navigation">
+        <div class="nav-item" onclick="window.location.href='music-writing.html'">Music & Writing</div>
+        <div class="nav-item" onclick="window.location.href='ideas-running.html'">Ideas Running</div>
+        <div class="nav-item" onclick="window.location.href='photoart.html'">Photoart</div>
+        <div class="nav-item" onclick="window.location.href='adventure.html'">Adventure</div>
     </div>
+    <div class="hero">
+        <h1>Plain & Simple</h1>
+        <p>Where ideas run free!</p>
+        <img src="path/to/your/image1.jpg" alt="Creative Image 1">
+        <img src="path/to/your/image2.jpg" alt="Creative Image 2">
+    </div>
+    <div class="recent-publication">
+        <h2>Recent Publications</h2>
+        <div id="recent-music-writing">
+            <h3>Music & Writing</h3>
+            <p>Loading recent publication...</p>
+        </div>
+        <div id="recent-ideas-running">
+            <h3>Ideas Running</h3>
+            <p>Loading recent publication...</p>
+        </div>
+        <div id="recent-photoart">
+            <h3>Photoart</h3>
+            <p>Loading recent publication...</p>
+        </div>
+        <div id="recent-adventure">
+            <h3>Adventure</h3>
+            <p>Loading recent publication...</p>
+        </div>
+    </div>
+    <script>
+        async function fetchRecentPublication(section, containerId) {
+            try {
+                const response = await fetch(section + '.json');
+                const data = await response.json();
+                const latest = data[0]; // Assuming the latest entry is the first one
+                const container = document.getElementById(containerId);
+                container.innerHTML = `
+                    <h3>${latest.title}</h3>
+                    <img src="${latest.image}" alt="${latest.title}">
+                    <p>${latest.excerpt}</p>
+                `;
+            } catch (error) {
+                console.error('Error fetching recent publication:', error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            fetchRecentPublication('music-writing', 'recent-music-writing');
+            fetchRecentPublication('ideas-running', 'recent-ideas-running');
+            fetchRecentPublication('photoart', 'recent-photoart');
+            fetchRecentPublication('adventure', 'recent-adventure');
+        });
+
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 </body>
 </html>
+
+
