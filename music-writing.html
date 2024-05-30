@@ -49,6 +49,10 @@
         .content-item {
             margin-bottom: 2rem;
         }
+        .content-item audio {
+            display: block;
+            margin: 1rem auto;
+        }
     </style>
 </head>
 <body>
@@ -69,22 +73,12 @@
                         <h2>${item.title}</h2>
                         <img src="${item.image}" alt="${item.title}">
                         <p>${item.description}</p>
-                    </div>
-                `).join('');
-                
-                // Add project.html content
-                const projectContent = `
-                    <div class="content-item">
-                        <h2>BBL Drizzy Project</h2>
                         <audio controls>
-                            <source src="https://benlebron.github.io/BBL%20DRIZZY%20BPM%20150.mp3.mp3" type="audio/mpeg">
+                            <source src="${item.audio}" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
-                        <p>Listen to the latest track by BBL Drizzy!</p>
                     </div>
-                `;
-                contentContainer.innerHTML += projectContent;
-
+                `).join('');
             } catch (error) {
                 console.error('Error loading content:', error);
             }
